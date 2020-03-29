@@ -1,0 +1,38 @@
+.fetch,
+.roulette {
+  height: 100vh;
+  background: rgb(245, 246, 248);
+  background: radial-gradient(
+    circle,
+    rgba(245, 246, 248, 1) 0%,
+    rgba(221, 228, 234, 1) 90%
+  );
+}
+
+.fetch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
+  &__title {
+    padding: 2.5rem 1.5rem;
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-size: 2.6rem;
+    padding: 1rem;
+    text-align: center;
+  }
+}
+
+.roulette__heading {
+  font-size: 1.7rem;
+  font-weight: 400;
+  padding: 1.5rem 0;
+  text-align: center;
+  color: rgb(78, 84, 80);
+}

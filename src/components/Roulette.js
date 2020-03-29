@@ -28,24 +28,24 @@ const Roulette = () => {
         Fetching the best places to eat around you
       </h1>
       <p className='fetch__subtitle'>Please wait just a moment...</p>
+      <p className='fetch__subtitle'>🍕</p>
     </div>
   ) : (
     <div className='roulette'>
+      <h1 className='roulette__heading'>Click anywhere to choose randomly!</h1>
       <Slider
         autoplay={true}
-        autoplaySpeed={600}
+        autoplaySpeed={2000}
         duration={150}
         arrows={false}
         pauseOnHover={false}
         adaptiveHeight={true}
       >
         {data.map(item => {
+          item.picNum = Math.floor(Math.random() * Math.floor(9))
           return <Card key={String(data[item])} item={item} />
         })}
       </Slider>
-
-      <h1>Choose one</h1>
-      <button>Button</button>
     </div>
   )
 }
