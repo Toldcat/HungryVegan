@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import Slider from 'infinite-react-carousel'
 import Card from './Card'
+import OptionModal from './OptionModal'
 
 const Roulette = () => {
   const [data, setData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [modalPick, setModalPick] = useState({})
 
   useEffect(() => {
+    document.addEventListener('click', () => {
+      setModalIsOpen(true)
+    })
+
     async function fetchData() {
       setIsLoading(true)
       const proxyurl = 'https://my-cors-anywhere-copy.herokuapp.com/'
@@ -15,7 +22,11 @@ const Roulette = () => {
 
       if (response.status === 200) {
         const res = await response.json()
+        const modalCalc = Math.floor(
+          Math.random() * Math.floor(res.results.length - 1)
+        )
         setData(res.results)
+        setModalPick(res.results[modalCalc])
         setIsLoading(false)
       }
     }
@@ -40,12 +51,15 @@ const Roulette = () => {
         arrows={false}
         pauseOnHover={false}
         adaptiveHeight={true}
+        swipe={false}
       >
         {data.map(item => {
+          //add a random placeholder image to each item
           item.picNum = Math.floor(Math.random() * Math.floor(9))
           return <Card key={String(data[item])} item={item} />
         })}
       </Slider>
+      <OptionModal modalIsOpen={modalIsOpen} modalPick={modalPick} />
     </div>
   )
 }
