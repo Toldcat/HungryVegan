@@ -39,15 +39,15 @@ const Roulette = () => {
         Fetching the best places to eat around you
       </h1>
       <p className='fetch__subtitle'>Please wait just a moment...</p>
-      <p className='fetch__subtitle'>🍕</p>
+      <p className='fetch__subtitle fetch__icon'>🍕</p>
     </div>
   ) : (
     <div className='roulette'>
       <h1 className='roulette__heading'>Click anywhere to choose randomly!</h1>
       <Slider
         autoplay={true}
-        autoplaySpeed={2000}
-        duration={150}
+        autoplaySpeed={900}
+        duration={100}
         arrows={false}
         pauseOnHover={false}
         adaptiveHeight={true}

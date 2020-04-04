@@ -8,7 +8,7 @@
 .ReactModalPortal .ReactModal__Overlay {
   transition: opacity 0.2s ease-in-out;
   z-index: 1000;
-  background: rgb(245, 246, 248);
+  background: $offwhite;
   background: radial-gradient(
     circle,
     rgba(245, 246, 248, 1) 0%,
@@ -25,4 +25,55 @@
 }
 
 .modal {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  outline: none;
+  align-items: center;
+
+  &__heading {
+    font-size: 4rem;
+    margin-bottom: 2.5rem;
+  }
+
+  &__info {
+    font-size: 2rem;
+    margin-bottom: 6.5rem;
+  }
+
+  &__detail {
+    background: $pink;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    font-size: 2rem;
+  }
+
+  &__icon {
+    height: 6rem;
+  }
+
+  &__link,
+  &__link:active,
+  &__link:visited {
+    text-decoration: none;
+    margin-bottom: 9rem;
+    color: $greentext;
+    font-size: 2.3rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+
+  &__link--small,
+  &__link--small:active,
+  &__link--small:visited {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    background: $pink;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
 }

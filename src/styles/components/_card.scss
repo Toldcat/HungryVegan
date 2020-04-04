@@ -8,7 +8,7 @@
   margin-top: 3rem;
 
   &__wrapper {
-    background: rgb(254, 97, 128);
+    background: $pink;
     padding: 2.5rem 2rem;
     border-radius: 1.5rem;
     display: flex;
@@ -35,7 +35,7 @@
   }
 
   &__info {
-    color: rgb(78, 84, 80);
+    color: $greentext;
     font-size: 1.8rem;
     letter-spacing: 0.1rem;
     line-height: 2.5rem;
