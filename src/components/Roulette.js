@@ -3,7 +3,7 @@ import Slider from 'infinite-react-carousel'
 import Card from './Card'
 import OptionModal from './OptionModal'
 
-const Roulette = () => {
+const Roulette = (props) => {
   const [data, setData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [modalIsOpen, setModalIsOpen] = useState(false)
@@ -17,7 +17,7 @@ const Roulette = () => {
     async function fetchData() {
       setIsLoading(true)
       const proxyurl = 'https://my-cors-anywhere-copy.herokuapp.com/'
-      const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=${process.env.REACT_APP_MAPS_API_KEY}&keyword=vegan&type=restaurant&location=51.460060,-0.213604&radius=4000`
+      const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=${process.env.REACT_APP_MAPS_API_KEY}&keyword=vegan&type=restaurant&location=${props.location.geoProps.lat},${props.location.geoProps.lng}&radius=2500`
       const response = await fetch(proxyurl + url, { mode: 'cors' })
 
       if (response.status === 200) {
@@ -53,7 +53,7 @@ const Roulette = () => {
         adaptiveHeight={true}
         swipe={false}
       >
-        {data.map(item => {
+        {data.map((item) => {
           //add a random placeholder image to each item
           item.picNum = Math.floor(Math.random() * Math.floor(9))
           return <Card key={String(data[item])} item={item} />
