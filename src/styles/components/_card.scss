@@ -4,10 +4,17 @@
   justify-content: center;
   align-content: center;
   align-items: center;
-  padding-top: 4rem 2.5rem;
+  padding: 4rem 2.5rem;
   margin-top: 3rem;
+
+  @media only screen and (max-width: 1200px) {
+    margin-top: 1.5rem;
+    padding: 1.5rem 0.5rem;
+  }
   @media only screen and (max-width: 768px) {
     margin-top: 1.5rem;
+    padding: 1.5rem 0.5rem;
+    max-width: 80%;
   }
 
   &__wrapper {
@@ -37,6 +44,12 @@
   &__img {
     max-height: 45rem;
     padding: 2rem;
+
+    @media only screen and (max-width: 1200px) {
+      max-height: 35rem;
+      padding: 1.5rem;
+    }
+
     @media only screen and (max-width: 768px) {
       max-height: 30rem;
       padding: 1rem;

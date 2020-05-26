@@ -1,6 +1,7 @@
 .fetch,
 .roulette {
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   background: $offwhite;
   background: radial-gradient(
     circle,
@@ -39,6 +40,9 @@
   padding: 1.5rem 0;
   text-align: center;
   color: $greentext;
+  @media only screen and (max-width: 1200px) {
+    padding: 1rem 0 0 0;
+  }
 }
 
 @keyframes rotation {
